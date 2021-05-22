@@ -7,8 +7,8 @@ number = input('Enter your phone number?')
 
 x = len(number)
 if x == 10:
-  if type(number) is not int:
-    number = int(number)
+  if number.isdigit():
     print("True")
 else:
     print("The string should contains only numerical characters and is only 10 characters long")
+
