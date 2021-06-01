@@ -7,29 +7,49 @@
 # the call make_operation(‘+’, 7, 7, 2) should return 16
 # the call make_operation(‘-’, 5, 5, -10, -20) should return 30
 # the call make_operation(‘*’, 7, 6) should return 42
-import abc
+from operator import pow, truediv, mul, add, sub
 
 
 def make_operation(operation=str, *arg):
-    totalSum = 0
+
     for number in arg:
         if operation == '+':
-            totalSum += number
-        elif operation == '-':
-            totalSum -= number
-        elif operation == '*':
-            totalSum = 1
-            totalSum *= number
-        else:
-            print("Invalid input")
+            d = 0
+            c = 1
+            resalt1 = arg[d] + arg[c]
+            if len(arg) <= 2:
+                print(resalt1)
+            while not c == len(arg) - 1:
+                    c += 1
+                    resalt2 = resalt1 + arg[c]
+                    resalt1 = resalt2
+                    print(resalt2)
+        if operation == '*':
+            d = 0
+            c = 1
+            resalt1 = arg[d] * arg[c]
+            if len(arg) <= 2:
+                print(resalt1)
+            while not c == len(arg) - 1:
+                    c += 1
+                    resalt2 = resalt1 * arg[c]
+                    resalt1 = resalt2
+                    print(resalt2)
+        if operation == '-':
+            d = 0
+            c = 1
+            resalt1 = arg[d] - arg[c]
+            if len(arg) >= 1:
+                print(resalt1)
+            while not c == len(arg) - 1:
+                    c += 1
+                    resalt2 = resalt1 - arg[c]
+                    resalt1 = resalt2
+                    print(resalt2)
 
-    print(totalSum)
+
 
 
 make_operation('+', 7, 7, 2)
-make_operation('-', 5, 5, -10, -20) # тут спробувала відтворити хронологію прешого кроку і невдало(((
-make_operation('*', 7, 6) # те саме...
-
-
-
-
+make_operation('*', 7, 6)
+make_operation('-', 5, 5, 10, 20)
