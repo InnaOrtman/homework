@@ -52,4 +52,5 @@ def make_operation(operation=str, *arg):
 
 make_operation('+', 7, 7, 2)
 make_operation('*', 7, 6)
-make_operation('-', 5, 5, 10, 20)
+make_operation('-', 5, 5, -10, -20)
+
