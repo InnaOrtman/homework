@@ -9,48 +9,42 @@
 # the call make_operation(‘*’, 7, 6) should return 42
 
 
-
 def make_operation(operation=str, *arg):
-
-    for number in arg:
-        if operation == '+':
-            d = 0
-            c = 1
-            resalt1 = arg[d] + arg[c]
-            if len(arg) <= 2:
-                print(resalt1)
-            while not c == len(arg) - 1:
-                    c += 1
-                    resalt2 = resalt1 + arg[c]
-                    resalt1 = resalt2
-                    print(resalt2)
-        if operation == '*':
-            d = 0
-            c = 1
-            resalt1 = arg[d] * arg[c]
-            if len(arg) <= 2:
-                print(resalt1)
-            while not c == len(arg) - 1:
-                    c += 1
-                    resalt2 = resalt1 * arg[c]
-                    resalt1 = resalt2
-                    print(resalt2)
-        if operation == '-':
-            d = 0
-            c = 1
-            resalt1 = arg[d] - arg[c]
-            if len(arg) >= 1:
-                print(resalt1)
-            while not c == len(arg) - 1:
-                    c += 1
-                    resalt2 = resalt1 - arg[c]
-                    resalt1 = resalt2
-                    print(resalt2)
-
-
+    if operation == '+':
+        d = 0
+        c = 1
+        resalt1 = arg[d] + arg[c]
+        if len(arg) <= 2:
+            print(resalt1)
+        while not c == len(arg) - 1:
+            c += 1
+            resalt2 = resalt1 + arg[c]
+            resalt1 = resalt2
+            print(resalt2)
+    if operation == '*':
+        d = 0
+        c = 1
+        resalt1 = arg[d] * arg[c]
+        if len(arg) <= 2:
+            print(resalt1)
+        while not c == len(arg) - 1:
+            c += 1
+            resalt2 = resalt1 * arg[c]
+            resalt1 = resalt2
+            print(resalt2)
+    if operation == '-':
+        d = 0
+        c = 1
+        resalt1 = arg[d] - arg[c]
+        if len(arg) >= 1:
+            print(resalt1)
+        while not c == len(arg) - 1:
+            c += 1
+            resalt2 = resalt1 - arg[c]
+            resalt1 = resalt2
+            print(resalt2)
 
 
 make_operation('+', 7, 7, 2)
 make_operation('*', 7, 6)
 make_operation('-', 5, 5, -10, -20)
-
