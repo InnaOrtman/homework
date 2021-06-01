@@ -7,7 +7,7 @@
 # the call make_operation(‘+’, 7, 7, 2) should return 16
 # the call make_operation(‘-’, 5, 5, -10, -20) should return 30
 # the call make_operation(‘*’, 7, 6) should return 42
-from operator import pow, truediv, mul, add, sub
+
 
 
 def make_operation(operation=str, *arg):
