@@ -5,19 +5,11 @@
 # Make the function print out the values of the dictionary to make sure that it works as intended.
 
 
-def make_country(name,  capital):
-    album = dict(name=name.upper(), capital=capital.title())
-    print(album)
-
-
-make_country('usa', 'washington')
-
-#  or
-
+album = {}
 def make_country(name, capital):
-    album = {}
     album[name.upper()] = capital.title()
     print(album)
 
 
 make_country('usa', 'washington')
+make_country('ert', 'washington')
