@@ -10,7 +10,7 @@
 # is_exist(N/'name') - gets 1 argument - the number N or the string 'name' and returns "Yes",
 # if the channel N or 'name' exists in the list, or "No" - in the other case.
 
-class TV_controller:
+class TV_controller():
     def __init__(self, channels):
         self._channels = channels
         self._current_channel = 0
