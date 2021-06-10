@@ -7,12 +7,18 @@
 # Note: file write methods do not add newline characters to your strings;
 # add an explicit ‘\n’ at the end of the string if you want to fully terminate the line in the file.
 
-with open('my_file.txt', 'w') as file:
+try:
+ with open('my_file.txt', 'w') as file:
     file.write('Hello file world!\n')
 
-with open('my_file.txt', 'r') as file:
+ with open('my_file.txt', 'r') as file:
     file = file.read()
     print(file, type(file))
+
+except TypeError as error:
+    print(f'Error inspected {error}')
+
+
 
 
 
