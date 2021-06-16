@@ -10,7 +10,7 @@
 # Delete a record for a given telephone number
 # Update a record for a given telephone number
 # An option to exit the program
-import itertools
+
 import json
 import sys
 import os
@@ -19,7 +19,9 @@ import os
 PHONEBOOK = {}
 phone_book = []
 temp = []
-
+x = 0
+y = 1
+z = 2
 
 def initial_phonebook():
     rows, cols = int(input("Enter the number of contacts you want to add: ")), 5
@@ -37,10 +39,11 @@ def initial_phonebook():
             if j == 1:
                 temp.append(int(input("Enter number*: ")))
 
-        PHONEBOOK['name'] = temp[0]
-        PHONEBOOK['phone'] = temp[1]
-        phone_book.append(temp)
+            if j == 2:
+                temp.append(input("Enter city*: "))
 
+        phone_book.append(temp)
+        dictionary()
     print(phone_book)
     return phone_book
 
@@ -69,11 +72,10 @@ def add_contact(pb):
             dip.append(input("Enter number: "))
         if i == 2:
             dip.append(str(input("Enter city: ")))
-
+    dictionary()
     pb.append(dip)
     print(pb)
     return pb
-
 
 def remove_existing(pb):
     query = str(
@@ -150,6 +152,25 @@ def thanks():
     print("********************************************************************")
     sys.exit("Goodbye!!!")
 
+def dictionary(y=y, x=x, z=z):
+    PHONEBOOK['name'] = temp[x]
+    PHONEBOOK['phone'] = temp[y]
+    PHONEBOOK['city'] = temp[z]
+    if x == x:
+          x += 1
+          PHONEBOOK['name'] = temp[x]
+          PHONEBOOK.update(PHONEBOOK)
+    elif y == y:
+          y += 1
+          PHONEBOOK['phone'] = temp[y]
+          PHONEBOOK.update(PHONEBOOK)
+    elif z == z:
+          z += 1
+          PHONEBOOK['city'] = temp[z]
+          PHONEBOOK.update(PHONEBOOK)
+
+    print(PHONEBOOK)
+
 
 print("********************************************************************")
 print("Hello dear user, welcome to our phonebook!")
@@ -176,5 +197,5 @@ while ch in (1, 2, 3, 4, 5):
         thanks()
 
 
-with open('PHONEBOOK.json', 'w') as file_object:
-    json.dump(PHONEBOOK, file_object)
+with open(r'C:\Users\User\Documents\GitHub\homework-2\PHONEBOOK.json', 'w') as file_object:
+    PHONEBOOK.

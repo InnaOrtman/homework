@@ -1,4 +1,4 @@
-#Task 1
+# Task 1
 # Write a script that creates a new output file called myfile.txt and writes the string "Hello file world!" in it.
 # Then write another script that opens myfile.txt, and reads and prints its contents.
 # Run your two scripts from the system command line.
@@ -6,19 +6,7 @@
 # What if you add a different directory path to the filename passed to open?
 # Note: file write methods do not add newline characters to your strings;
 # add an explicit ‘\n’ at the end of the string if you want to fully terminate the line in the file.
+import json
 
-try:
- with open('my_file.txt', 'w') as file:
-    file.write('Hello file world!\n')
-
- with open('my_file.txt', 'r') as file:
-    file = file.read()
-    print(file, type(file))
-
-except TypeError as error:
-    print(f'Error inspected {error}')
-
-
-
-
-
+with open(r'C:\Users\User\Documents\GitHub\homework-2\PHONEBOOK.json', 'w') as file_object:
+    file_object.write(P)
