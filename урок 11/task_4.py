@@ -16,13 +16,14 @@ class CustomException(Exception):
             self.message = None
 
     def __str__(self):
-        print('We have a problem!')
+        print(self.message)
         if self.message:
             return 'MyError, {0} '.format(self.message)
         else:
             return 'MyError has been raised'
 
 
-raise CustomException('We have a problem')
+raise CustomException('We have a problem!')
+
 
 
