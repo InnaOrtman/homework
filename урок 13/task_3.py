@@ -8,8 +8,11 @@ def choose_func(func, func1, nums: list):
     for num in nums:
         if num > 0:
             square_nums(nums)
+            break
+    for num in nums:
         if num < 0:
             remove_negatives(nums)
+            break
 
 
 def square_nums(nums: list):
