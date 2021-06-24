@@ -8,5 +8,10 @@
 # add an explicit ‘\n’ at the end of the string if you want to fully terminate the line in the file.
 import json
 
-with open(r'C:\Users\User\Documents\GitHub\homework-2\PHONEBOOK.json', 'w') as file_object:
-    file_object.write(P)
+try:
+    with open('myfile.txt', 'w') as file:
+        text_file = file.write("Hello world")
+except FileNotFoundError:
+    print('File Not Found')
+else:
+    print(type(file))
