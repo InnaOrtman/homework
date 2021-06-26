@@ -6,6 +6,10 @@
 
 from email_validator import validate_email, EmailNotValidError
 
+"""
+Для того, щоб програма працювала потрібно заінсталити pip install email-validator на PyCharm
+"""
+
 
 class Validator:
     def __init__(self, email):
@@ -28,5 +32,3 @@ validator_2 = Validator('innalevko1987gmail.com')
 validator_1.validate
 
 validator_2.validate
-
-
