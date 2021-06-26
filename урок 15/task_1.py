@@ -4,8 +4,7 @@
 # method to validate parameter email, passed to the constructor. The logic inside the `validate`
 # method could be to check if the passed email parameter is a valid email string.
 
-import re
-from pip._vendor.pyparsing import Regex
+from email_validator import validate_email, EmailNotValidError
 
 
 class Validator:
@@ -14,16 +13,20 @@ class Validator:
 
     @property
     def validate(self):
-        regex = '(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)'
-        if not re.match(regex, self.email):
-            print(self.email, " is incorrect")
-        else:
-            print(self.email, " is correct")
+        try:
+            valid = validate_email(self.email)
+            self.email = valid.email
+            print(valid.email, 'is correct!')
+
+        except EmailNotValidError as e:
+            print(str(e))
 
 
 validator_1 = Validator('innalevko1987@gmail.com')
 validator_2 = Validator('innalevko1987gmail.com')
 
-print(validator_1.validate)
-print(validator_2.validate)
+validator_1.validate
+
+validator_2.validate
+
 
